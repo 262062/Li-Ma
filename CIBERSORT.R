@@ -18,8 +18,6 @@ for(i in colnames(data[,1:(ncol(data)-2)])){
       outTab=rbind(outTab,cbind(rt1,gene=i))
       print(pValue)
   }
-#my %hash=();
-#while(my $line=<RF>)chomp($line);if($line=~/gene_id \"(.+?)\"\;.+gene_name "(.+?)"\;.+gene_biotype \"(.+?)\"\;/){$hash{$1}=$2;}}
 close(RF);
 write.table(Tab,file="data.txt",sep="\t",row.names=F,quote=F)
 data=read.table("data.txt",sep="\t",header=T,check.names=F)       
