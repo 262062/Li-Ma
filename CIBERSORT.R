@@ -19,7 +19,7 @@ for(i in colnames(data[,1:(ncol(data)-2)])){
       print(pValue)
   }
 }
-write.table(outTab,file="data.txt",sep="\t",row.names=F,quote=F)
+write.table(Tab,file="data.txt",sep="\t",row.names=F,quote=F)
 data=read.table("data.txt",sep="\t",header=T,check.names=F)       
 data$Subtype=factor(data$Subtype, levels=c("L","M","H"))
 p=ggboxplot(data, x="gene", y="expression", color = "Subtype", orientation = "horizontal",
