@@ -3,7 +3,7 @@ library(GSVA)
 library(limma)
 library(GSEABase)
 
-rt=read.table(inputFile,sep="\t",header=T,check.names=F)
+rt=read.table(input,sep="\t",header=T,check.names=F)
 rt=as.matrix(rt)
 rownames(rt)=rt[,1]
 exp=rt[,2:ncol(rt)]
@@ -21,5 +21,5 @@ normalize=function(x){
 
 ssgsea=normalize(ssgseaScore)
 ssgsea=rbind(id=colnames(ssgsea),ssgsea)
-write.table(ssgseaOut,file="ssgsea.txt",sep="\t",quote=F,col.names=F)
+write.table(ssgsea,file="ssgsea.txt",sep="\t",quote=F,col.names=F)
 
