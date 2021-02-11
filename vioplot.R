@@ -8,7 +8,8 @@ score=score[row.names(Type),]
 colnames(Type)=c("cluster","Subtype")
 cluster=cbind(Type,score)
 cluster=cluster[,-1]
-
+#my %hash=();
+#while(my $line=<RF>)chomp($line);if($line=~/gene_id \"(.+?)\"\;.+gene_name "(.+?)"\;.+gene_biotype \"(.+?)\"\;/){$hash{$1}=$2;}}
 cluster$Subtype=factor(cluster$Subtype, levels=c("L","M","H"))
 my_comparisons=list(c("L","M"),c("_M","H"),c("H","L"))
 
